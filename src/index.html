@@ -37,7 +37,28 @@
     </button>
   </header>
  
+   <script>
+    const toggle = document.getElementById('theme-toggle');
+    const sun = document.getElementById('sun-icon');
+    const moon = document.getElementById('moon-icon');
 
+    // Load saved theme
+    if (localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      sun.classList.remove('hidden');
+    } else {
+      moon.classList.remove('hidden');
+    }
+
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.theme = isDark ? 'dark' : 'light';
+      sun.classList.toggle('hidden', !isDark);
+      moon.classList.toggle('hidden', isDark);
+    });
+  </script>
 </body>
 
 </html>
