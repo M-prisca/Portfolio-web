@@ -8,14 +8,9 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-600: oklch(57.7% 0.245 27.325);
-    --color-orange-500: oklch(70.5% 0.213 47.604);
-    --color-orange-600: oklch(64.6% 0.222 41.116);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-yellow-400: oklch(85.2% 0.199 91.936);
-    --color-cyan-400: oklch(78.9% 0.154 211.53);
-    --color-sky-400: oklch(74.6% 0.16 232.661);
     --color-blue-500: oklch(62.3% 0.214 259.815);
-    --color-blue-600: oklch(54.6% 0.245 262.881);
-    --color-indigo-700: oklch(45.7% 0.24 277.023);
     --color-purple-600: oklch(55.8% 0.288 302.321);
     --color-pink-500: oklch(65.6% 0.241 354.308);
     --color-gray-300: oklch(87.2% 0.01 258.338);
@@ -24,6 +19,7 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --container-xl: 36rem;
     --container-3xl: 48rem;
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
@@ -226,14 +222,8 @@
   .hidden {
     display: none;
   }
-  .inline {
-    display: inline;
-  }
   .h-6 {
     height: calc(var(--spacing) * 6);
-  }
-  .h-12 {
-    height: calc(var(--spacing) * 12);
   }
   .h-14 {
     height: calc(var(--spacing) * 14);
@@ -244,14 +234,8 @@
   .h-50 {
     height: calc(var(--spacing) * 50);
   }
-  .h-full {
-    height: 100%;
-  }
   .w-6 {
     width: calc(var(--spacing) * 6);
-  }
-  .w-12 {
-    width: calc(var(--spacing) * 12);
   }
   .w-14 {
     width: calc(var(--spacing) * 14);
@@ -267,6 +251,15 @@
   }
   .max-w-3xl {
     max-width: var(--container-3xl);
+  }
+  .max-w-xl {
+    max-width: var(--container-xl);
+  }
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-disc {
+    list-style-type: disc;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -350,6 +343,9 @@
   .text-center {
     text-align: center;
   }
+  .text-left {
+    text-align: left;
+  }
   .font-sans {
     font-family: var(--font-sans);
   }
@@ -384,6 +380,9 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .text-amber-400 {
+    color: var(--color-amber-400);
   }
   .text-black {
     color: var(--color-black);
