@@ -1,50 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prisca's Portfolio</title>
-  <link href="./output.css" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet" />
 </head>
 
-<body>
-  <header class="flex items-center justify-between">
-    <img src="imgs/logo.png" alt="logo image" class="w-24 h-20 ml-14">
-    <nav class=" ">
-      <ul class="flex justify-center gap-20 ">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white font-sans">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-4 py-4 sm:px-14">
+    <img src="imgs/logo.png" alt="logo image" class="w-24 h-20" />
+    <nav>
+      <ul class="hidden sm:flex gap-10 text-lg font-medium">
+        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-500">About</a></li>
+        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
       </ul>
     </nav>
 
-    <button id="theme-toggle" class="text-gray-600 dark:text-gray-300 p-2 mr-14">
+    <button id="theme-toggle" aria-label="Toggle dark/light theme" class="text-gray-600 dark:text-gray-300 p-2">
       <!-- Sun icon for light mode -->
       <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24"
-        stroke="black">
+        stroke="white">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M12 3v1m0 16v1m8.66-12.34l-.71.71M4.05 19.95l-.71-.71M21 12h1M2 12H1m16.95 4.05l.71.71M4.05 4.05l.71.71M12 7a5 5 0 100 10 5 5 0 000-10z" />
       </svg>
 
       <!-- Moon icon for dark mode -->
       <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24"
-        stroke="black">
+        stroke="white">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
       </svg>
     </button>
   </header>
- 
-   <script>
+
+  <!-- Sections -->
+  <main class="px-4 sm:px-14">
+    <section id="home" class="py-20">
+      <h1 class="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
+      <p class="text-lg">Hi, I'm Prisca. I build web apps, explore design, and love solving tech problems.</p>
+    </section>
+
+    <section id="about" class="py-20">
+      <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+      <p class="text-lg max-w-3xl">I’m a passionate software engineering student focused on full-stack web development and creating impactful projects using modern technologies.</p>
+    </section>
+
+    <section id="projects" class="py-20">
+      <h2 class="text-3xl font-semibold mb-4">Projects</h2>
+      <ul class="list-disc ml-6 text-lg">
+        <li>Dynamic Portfolio System using PHP & MariaDB</li>
+        <li>Guess the Word JavaScript Game</li>
+        <li>Linux Server with Suricata IDS</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="py-20">
+      <h2 class="text-3xl font-semibold mb-4">Contact Me</h2>
+      <p class="text-lg">Feel free to reach out via <a href="mailto:youremail@example.com"
+          class="text-blue-500 hover:underline">email</a> or connect on social platforms.</p>
+    </section>
+  </main>
+
+  <!-- Theme Toggle Script -->
+  <script>
     const toggle = document.getElementById('theme-toggle');
     const sun = document.getElementById('sun-icon');
     const moon = document.getElementById('moon-icon');
 
     // Load saved theme
-    if (localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
       document.documentElement.classList.add('dark');
       sun.classList.remove('hidden');
     } else {
