@@ -1,0 +1,23 @@
+@import "tailwindcss";
+ 
+  body {
+  @apply bg-white text-black;
+}
+ header {
+    @apply bg-white text-black;
+  }
+  section {
+    @apply bg-white text-black;
+  }
+  /* Dark mode styles */  
+.dark section {
+    @apply bg-gray-800 text-white;
+  }
+
+.dark header {
+  @apply bg-gray-900 text-white;
+}
+
+.dark body {
+  @apply bg-gray-900 text-white;
+}
